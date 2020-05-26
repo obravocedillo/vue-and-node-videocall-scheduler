@@ -1,0 +1,15 @@
+{
+  "name": "bases_avanzadas_proyecto",
+  "version": "1.0.0",
+  "description": "Proyecto de bases avanzadas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Edgar y Oliver",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.5.7"
+  }
+}
