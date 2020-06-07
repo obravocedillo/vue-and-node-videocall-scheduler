@@ -1,32 +1,89 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div>
+    <router-view> </router-view>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script lang="ts">
+import Vue from 'vue';
+import Navbar  from './components/Navbar.vue'
+export default Vue.extend({
+  name: 'App',
+  components: {
+    Navbar
+  },
+  data: () => ({
+  }),
+  created() {
+    this.$store.dispatch('CHECKUSER')
+  },
+  computed: {
+    loggedIn  ()  {
+      return this.$store.getters.LOGGED_IN
+    },
+    loaded () {
+      return this.$store.getters.LOADED
     }
   }
-}
+});
+</script>
+
+
+<style lang="css">
+  body{
+    margin: 0;
+  }
+
+  .v-application{
+    overflow-x: hidden !important;
+  }
+
+  .GlobalRowCenter{
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+  }
+
+  .GlobalCenter{
+    justify-content: center;
+    align-items:center;
+  }
+
+  .PrimaryColor{
+    color: #4b85a8;
+  }
+
+  .SecondaryColor{
+    color:#d98100;
+  }
+
+  .TitleMedium{
+    font-size: 2rem;
+    font-weight: 500;
+    border-bottom: 2px solid #4b85a8;;
+    padding-bottom: .5rem;
+  }
+
+  .TextCentered{
+    text-align: center;
+  }
+
+    @media only screen and (max-width: 600px) {
+      
+    }
+
+    @media only screen and (max-width: 960px) {
+        .TitleMedium{
+          font-size: 1.8rem;
+          font-weight: 500;
+          border-bottom: 2px solid #4b85a8;
+          padding-bottom: .5rem;
+        }
+    }
+
+    @media only screen and (max-width: 1264px) {
+    
+    }
+
+ 
 </style>
