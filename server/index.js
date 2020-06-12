@@ -61,7 +61,6 @@ mongo.connect(url, { useNewUrlParser: true, useUnifiedTopology: true}, (err, cli
     app.post('/register-date', function (req, res) {
 
       collection.find({email:req.body.doctor.email}).toArray().then((item)=>{
-        console.log(req.body)
         let tempItems;
         let tempItem = {
           date: req.body.date,
