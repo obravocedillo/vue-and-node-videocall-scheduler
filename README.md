@@ -1,5 +1,8 @@
 # bases_avanzadas_web
 
+# Description
+Vuen and node videocall scheduler where you can programate and create meetings using jitsi call
+
 ## Project setup
 ```
 npm install
