@@ -1,12 +1,12 @@
 <template>
     <div>
         <div class="NavContainer">
-            <span class="TitleName" @click="openRoute('Home')">Psicólogo online</span>
+            <span class="TitleName" @click="openRoute('Home')" data-testid="main-title">Psicólogo online</span>
             <div class="spacer"></div>
-            <span class="NavItem" v-if="loggedIn" @click="openRoute('Appointments')">Mis citas</span>
-            <span class="NavItem" v-if="loggedIn" @click="openRoute('NewAppointment')">Programar cita</span>
-            <span class="NavItem" @click="logout()" v-if="loggedIn">Cerrar sesión</span>
-            <span class="MobileMenu" @click="openMobile()" v-if="loggedIn">Menu</span>
+            <span class="NavItem" v-if="loggedIn" @click="openRoute('Appointments')" data-testid="main-navigation">>Mis citas</span>
+            <span class="NavItem" v-if="loggedIn" @click="openRoute('NewAppointment')" data-testid="main-navigation">Programar cita</span>
+            <span class="NavItem" @click="logout()" v-if="loggedIn" data-testid="main-navigation">Cerrar sesión</span>
+            <span class="MobileMenu" @click="openMobile()" v-if="loggedIn" data-testid="main-navigation">Menu</span>
         </div>  
         <transition name="fade" enter-active-class="fadeInUp">
             <div v-if="mobileMenuOpen" style="animation-duration: 0.3s">

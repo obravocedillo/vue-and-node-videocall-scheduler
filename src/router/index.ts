@@ -4,7 +4,7 @@ import store from '../store/index';
 /* eslint-disable */
 Vue.use(VueRouter)
 
-  const routes: Array<RouteConfig> = [
+  const routes:Array<RouteConfig> = [
   {
     path: '*',
     redirect: '/home'
